@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 auto;
+}
+
+.wrap {
+    align-items: flex-start;
+    display: flex;
+    .wrap-white {
+        background-color: #FFFFFF;
+        margin: 0 auto;
+        max-width: 1440px;
+        padding: 40px 96px;
+        width: 50%;
+        h1 {
+            color: #1A4D2E;
+            font-size: 96px;
+            font-weight: 900;
+            margin: 0;
+        }
+        h2 {
+            color: #111111;
+            font-size: 48px;
+            font-weight: 900;
+            margin: 0;
+        }
+        p {
+            color: #111111;
+            font-size: 16px;
+            font-weight: 400;
+        }
+        form {
+            display: grid;
+            input {
+                font-size: 16px;
+                font-weight: 400;
+                margin: 8px 0;
+                padding: 16px 24px;
+                width: 100%;
+                &[type=url], &[type=number] {
+                    background-color: #FFFFFF;
+                    border: 1px solid #111111;
+                    color: #111111;
+                    &:focus {
+                        border: 1px solid #1A4D2E;
+                    }
+                }
+                &[type=submit] {
+                    background-color: #1A4D2E;
+                    border: 0;
+                    color: #FFFFFF;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #111111;
+                    }
+                }
+                &:focus {
+                    outline: 0;
+                }
+            }
+        }
+    }
+    .wrap-green {
+        background-color: #1A4D2E;
+        height: 100%;
+        margin: 0 auto;
+        max-width: 1440px;
+        padding: 40px 96px;
+        width: 50%;
+        h2 {
+            color: #FFFFFF;
+            font-size: 48px;
+            font-weight: 900;
+            margin: 0;
+        }
+        p {
+            color: #FFFFFF;
+            font-size: 24px;
+            font-weight: 400;
+        }
+        .list {
+            background-color: #FFFFFF;
+            display: grid;
+            margin: 32px 0;
+            padding: 24px 24px;
+            p {
+                color: #111111;
+                font-size: 16px;
+                font-weight: 900;
+                margin: 4px 0;
+                span {
+                    font-weight: 500;
+                    a {
+                        color: #009CD5;
+                        text-decoration: none;
+                        &:hover {
+                            color: #1A4D2E;
+                        }
+                    }
+                    &.same {
+                        color: #111111;
+                    }
+                    &.update {
+                        color: #47E000;
+                    }
+                }
+            }
+            button {
+                background-color: #F94F00;
+                border: 0;
+                color: #FFFFFF;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 400;
+                margin: 16px 0 0 0;
+                padding: 16px 24px;
+                width: 100%;
+                &:hover {
+                    background-color: #111111;
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .wrap {
+        .wrap-white, .wrap-green {
+            padding: 40px 48px;
+            h1 {
+                font-size: 64px;
+            }
+            h2 {
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrap {
+        flex-direction: column;
+        .wrap-white, .wrap-green {
+            padding: 40px 24px;
+            width: 100%;
+            h1 {
+                font-size: 48px;
+            }
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+}

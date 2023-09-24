@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+}
+
+.wrap {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap .wrap-white {
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 40px 96px;
+  width: 50%;
+}
+
+.wrap .wrap-white h1 {
+  color: #1A4D2E;
+  font-size: 96px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.wrap .wrap-white h2 {
+  color: #111111;
+  font-size: 48px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.wrap .wrap-white p {
+  color: #111111;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.wrap .wrap-white form {
+  display: -ms-grid;
+  display: grid;
+}
+
+.wrap .wrap-white form input {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 8px 0;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+.wrap .wrap-white form input[type=url], .wrap .wrap-white form input[type=number] {
+  background-color: #FFFFFF;
+  border: 1px solid #111111;
+  color: #111111;
+}
+
+.wrap .wrap-white form input[type=url]:focus, .wrap .wrap-white form input[type=number]:focus {
+  border: 1px solid #1A4D2E;
+}
+
+.wrap .wrap-white form input[type=submit] {
+  background-color: #1A4D2E;
+  border: 0;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.wrap .wrap-white form input[type=submit]:hover {
+  background-color: #111111;
+}
+
+.wrap .wrap-white form input:focus {
+  outline: 0;
+}
+
+.wrap .wrap-green {
+  background-color: #1A4D2E;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 40px 96px;
+  width: 50%;
+}
+
+.wrap .wrap-green h2 {
+  color: #FFFFFF;
+  font-size: 48px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.wrap .wrap-green p {
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.wrap .wrap-green .list {
+  background-color: #FFFFFF;
+  display: -ms-grid;
+  display: grid;
+  margin: 32px 0;
+  padding: 24px 24px;
+}
+
+.wrap .wrap-green .list p {
+  color: #111111;
+  font-size: 16px;
+  font-weight: 900;
+  margin: 4px 0;
+}
+
+.wrap .wrap-green .list p span {
+  font-weight: 500;
+}
+
+.wrap .wrap-green .list p span a {
+  color: #009CD5;
+  text-decoration: none;
+}
+
+.wrap .wrap-green .list p span a:hover {
+  color: #1A4D2E;
+}
+
+.wrap .wrap-green .list p span.same {
+  color: #111111;
+}
+
+.wrap .wrap-green .list p span.update {
+  color: #47E000;
+}
+
+.wrap .wrap-green .list button {
+  background-color: #F94F00;
+  border: 0;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 16px 0 0 0;
+  padding: 16px 24px;
+  width: 100%;
+}
+
+.wrap .wrap-green .list button:hover {
+  background-color: #111111;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrap .wrap-white, .wrap .wrap-green {
+    padding: 40px 48px;
+  }
+  .wrap .wrap-white h1, .wrap .wrap-green h1 {
+    font-size: 64px;
+  }
+  .wrap .wrap-white h2, .wrap .wrap-green h2 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .wrap .wrap-white, .wrap .wrap-green {
+    padding: 40px 24px;
+    width: 100%;
+  }
+  .wrap .wrap-white h1, .wrap .wrap-green h1 {
+    font-size: 48px;
+  }
+  .wrap .wrap-white h2, .wrap .wrap-green h2 {
+    font-size: 32px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
