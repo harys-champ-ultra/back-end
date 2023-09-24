@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
-
 <body>
     <div class="wrap">
         <div class="wrap-white">
@@ -26,14 +24,14 @@
             <?php
             require_once("./includes/conn.php");
             $sqlSelect = "SELECT * FROM `list`;";
-            $resultSelect = $connection->query($sqlSelect)
-                or die('Problem with query! ' . $connection->error);
-            if ($resultSelect->num_rows) {
+            $resultSelect = $connection->query($sqlSelect);
+
+            if ($resultSelect) {
                 while ($row = $resultSelect->fetch_assoc()) {
             ?>
                     <div class="list">
-                        <p><?php echo "URL: <span><a href='" . $row['url'] . "' target='_blank'>" . $row['url'] . "</a></span>"; ?></p>
-                        <p><?php echo "Duration: <span>" . $row['duration'] . "s</span>"; ?></p>
+                        <p>URL: <span><a href="<?php echo $row['url']; ?>" target="_blank"><?php echo $row['url']; ?></a></span></p>
+                        <p>Duration: <span><?php echo $row['duration']; ?>s</span></p>
                         <?php
                         $url = $row["url"];
                         $duration = $row["duration"];
@@ -41,21 +39,26 @@
                         header("Refresh:" . $duration . "; URL=$requestURL");
                         $contents = @file_get_contents($url);
                         $hash = @file_get_contents("./data/hash" . $row["listid"]);
+                        
                         if ($hash === ($pageHash = md5($contents))) {
                         ?>
                             <p>Status: <span class="same">Same</span></p>
                         <?php
                         } else {
                             $file = fopen("./data/hash" . $row["listid"], "w");
-                            fwrite($file, $pageHash);
-                            fclose($file);
+                            if ($file) {
+                                fwrite($file, $pageHash);
+                                fclose($file);
+                            }
+                        ?>
+                            <p>Status: <span class="update">Update</span></p>
+                            <script>
+                                const success = new Audio("./sounds/success.mp3");
+                                success.play();
+                            </script>
+                        <?php
                         }
                         ?>
-                        <p>Status: <span class="update">Update</span></p>
-                        <script>
-                            const success = new Audio("./sounds/success.mp3");
-                            success.play();
-                        </script>
                         <button onclick="window.location.href='./includes/deleteList.php?listid=<?php echo $row['listid']; ?>'">Delete</button>
                     </div>
             <?php
@@ -68,5 +71,4 @@
         </div>
     </div>
 </body>
-
 </html>
